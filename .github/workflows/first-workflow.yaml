@@ -11,3 +11,16 @@ jobs:
             - name: multiline commands
               run: |
                 node -v
+    parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+            - name: View macos sw version
+              run: sw_vers
+    dependent-job:
+        runs-on: windows-latest
+        needs: run-shell-commands
+        steps:
+            - name: Echo a string
+              run: Write-Output "Windows String"
+            - name: Error job
+              run: doesnotexists
