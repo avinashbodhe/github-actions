@@ -11,4 +11,3 @@ jobs:
             - name: multiline commands
               run: |
                 node -v
-                npn -v
